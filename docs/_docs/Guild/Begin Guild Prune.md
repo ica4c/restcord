@@ -1,7 +1,7 @@
 ---
 title: Begin Guild Prune
 category: Guild
-order: 26
+order: 28
 ---
 
 # `beginGuildPrune`
@@ -20,8 +20,10 @@ Begin a prune operation. Requires the KICK_MEMBERS permission.  For large guilds
 Name | Type | Required | Default
 --- | --- | --- | ---
 guild.id | snowflake | true | *null*
-days | integer | false | *null*
-compute_prune_count | boolean | false | *null*
+days | integer | false | 7
+compute_prune_count | boolean | false | true
+include_roles | array | false | none
+reason? | string | false | *null*
 
 ## Response
 

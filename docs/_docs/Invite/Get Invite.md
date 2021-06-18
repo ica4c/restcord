@@ -20,6 +20,8 @@ $client->invite->getInvite($parameters);
 Name | Type | Required | Default
 --- | --- | --- | ---
 invite.code | string | true | *null*
+with_counts? | boolean | false | *null*
+with_expiration? | boolean | false | *null*
 
 ## Response
 

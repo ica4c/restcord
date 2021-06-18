@@ -1,7 +1,7 @@
 ---
 title: Get Guild Channels
 category: Guild
-order: 5
+order: 6
 ---
 
 # `getGuildChannels`
@@ -12,7 +12,7 @@ $client->guild->getGuildChannels($parameters);
 
 ## Description
 
-
+Does not include threads.
 
 ## Parameters
 

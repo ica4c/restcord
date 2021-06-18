@@ -1,7 +1,7 @@
 ---
 title: Get Pinned Messages
 category: Channel
-order: 20
+order: 23
 ---
 
 # `getPinnedMessages`

@@ -1,7 +1,7 @@
 ---
 title: Create Guild Role
 category: Guild
-order: 21
+order: 23
 ---
 
 # `createGuildRole`
@@ -21,7 +21,7 @@ Name | Type | Required | Default
 --- | --- | --- | ---
 guild.id | snowflake | true | *null*
 name | string | false | &quot;new role&quot;
-permissions | integer | false | *null*
+permissions | string | false | @everyone permissions in guild
 color | integer | false | 0
 hoist | boolean | false | *null*
 mentionable | boolean | false | *null*

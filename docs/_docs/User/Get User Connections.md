@@ -1,7 +1,7 @@
 ---
 title: Get User Connections
 category: User
-order: 9
+order: 8
 ---
 
 # `getUserConnections`

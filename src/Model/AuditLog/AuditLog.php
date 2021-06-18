@@ -19,11 +19,18 @@ namespace RestCord\Model\AuditLog;
 class AuditLog {
 
 	/**
-	 * list of audit log entires
+	 * list of audit log entries
 	 *
 	 * @var array
 	 */
 	public $audit_log_entries;
+
+	/**
+	 * list of partial integration objects
+	 *
+	 * @var array
+	 */
+	public $integrations;
 
 	/**
 	 * list of users found in the audit log

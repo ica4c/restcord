@@ -1,18 +1,18 @@
 ---
-title: Get Guild Embed
+title: Get Guild Welcome Screen
 category: Guild
-order: 34
+order: 38
 ---
 
-# `getGuildEmbed`
+# `getGuildWelcomeScreen`
 
 ```php
-$client->guild->getGuildEmbed($parameters);
+$client->guild->getGuildWelcomeScreen($parameters);
 ```
 
 ## Description
 
-Requires the MANAGE_GUILD permission.
+
 
 ## Parameters
 
@@ -23,8 +23,8 @@ guild.id | snowflake | true | *null*
 
 ## Response
 
-Returns the guild embed object.
+Returns the Welcome Screen object for the guild.
 
 Can Return:
 
-* guild embed
+* Welcome Screen

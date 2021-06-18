@@ -1,7 +1,7 @@
 ---
 title: Create Dm
 category: User
-order: 7
+order: 6
 ---
 
 # `createDm`

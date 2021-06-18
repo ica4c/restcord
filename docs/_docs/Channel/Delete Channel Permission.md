@@ -1,7 +1,7 @@
 ---
 title: Delete Channel Permission
 category: Channel
-order: 18
+order: 20
 ---
 
 # `deleteChannelPermission`

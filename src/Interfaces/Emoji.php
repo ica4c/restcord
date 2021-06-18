@@ -21,7 +21,7 @@ interface Emoji {
 	/**
 	 * @see https://discordapp.com/developers/docs/resources/emoji#create-guild-emoji
 	 *
-	 * @param array $options ['guild.id' => 'snowflake', 'name' => 'string', 'image' => 'string', 'roles' => 'array']
+	 * @param array $options ['guild.id' => 'snowflake', 'name' => 'string', 'image' => 'image data', 'roles' => 'array']
 	 * @return \RestCord\Model\Emoji\Emoji Returns the new emoji object on success.
 	 */
 	public function createGuildEmoji(array $options);
@@ -38,7 +38,7 @@ interface Emoji {
 	 * @see https://discordapp.com/developers/docs/resources/emoji#get-guild-emoji
 	 *
 	 * @param array $options ['guild.id' => 'snowflake', 'emoji.id' => 'string']
-	 * @return \RestCord\Model\Emoji\Emoji Returns an emoji object for the given guild and emoji IDs
+	 * @return \RestCord\Model\Emoji\Emoji Returns an emoji object for the given guild and emoji IDs.
 	 */
 	public function getGuildEmoji(array $options);
 

@@ -35,7 +35,7 @@ class Connection {
 	/**
 	 * if passed, modifies the user's avatar
 	 *
-	 * @var avatar data
+	 * @var string image data
 	 */
 	public $avatar;
 
@@ -63,16 +63,16 @@ class Connection {
 	/**
 	 * an array of partial server integrations
 	 *
-	 * @var array
+	 * @var array|null
 	 */
 	public $integrations;
 
 	/**
-	 * max number of guilds to return (1-100)
+	 * max number of guilds to return (1-200)
 	 *
 	 * @var int
 	 */
-	public $limit = 100;
+	public $limit = 200;
 
 	/**
 	 * the username of the connection account
@@ -84,7 +84,7 @@ class Connection {
 	/**
 	 * a dictionary of user ids to their respective nicknames
 	 *
-	 * @var dict
+	 * @var string dict
 	 */
 	public $nicks;
 
@@ -98,7 +98,7 @@ class Connection {
 	/**
 	 * whether the connection is revoked
 	 *
-	 * @var bool
+	 * @var bool|null
 	 */
 	public $revoked = false;
 
@@ -117,7 +117,7 @@ class Connection {
 	public $type;
 
 	/**
-	 * users username, if changed may cause the users discriminator to be randomized.
+	 * user's username, if changed may cause the user's discriminator to be randomized.
 	 *
 	 * @var string
 	 */

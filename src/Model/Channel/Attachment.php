@@ -19,6 +19,13 @@ namespace RestCord\Model\Channel;
 class Attachment {
 
 	/**
+	 * the attachment's media type
+	 *
+	 * @var string|null
+	 */
+	public $content_type;
+
+	/**
 	 * name of file attached
 	 *
 	 * @var string
@@ -28,7 +35,7 @@ class Attachment {
 	/**
 	 * height of file (if image)
 	 *
-	 * @var int
+	 * @var int|null
 	 */
 	public $height;
 
@@ -63,7 +70,7 @@ class Attachment {
 	/**
 	 * width of file (if image)
 	 *
-	 * @var int
+	 * @var int|null
 	 */
 	public $width;
 

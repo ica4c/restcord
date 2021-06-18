@@ -1,7 +1,7 @@
 ---
 title: Get Channel Invites
 category: Channel
-order: 16
+order: 18
 ---
 
 # `getChannelInvites`

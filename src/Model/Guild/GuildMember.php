@@ -27,17 +27,10 @@ class GuildMember {
 
 	/**
 	 * when the user joined the guild
-     *
-     * @var \DateTimeImmutable
-     */
-	public $joined_at;
-
-	/**
-	 * when the user started boosting the guild
 	 *
-	 * @var \DateTimeImmutable|null
+	 * @var \DateTimeImmutable
 	 */
-	public $premium_since;
+	public $joined_at;
 
 	/**
 	 * whether the user is muted in voice channels
@@ -47,11 +40,32 @@ class GuildMember {
 	public $mute = false;
 
 	/**
-	 * this users guild nickname (if one is set)
+	 * this users guild nickname
 	 *
 	 * @var string|null
 	 */
 	public $nick;
+
+	/**
+	 * whether the user has not yet passed the guild's Membership Screening requirements
+	 *
+	 * @var bool|null
+	 */
+	public $pending = false;
+
+	/**
+	 * total permissions of the member in the channel, including overwrites, returned when in the interaction object
+	 *
+	 * @var string|null
+	 */
+	public $permissions;
+
+	/**
+	 * when the user started boosting the guild
+	 *
+	 * @var \DateTimeImmutable|null
+	 */
+	public $premium_since;
 
 	/**
 	 * array of role object ids
@@ -63,7 +77,7 @@ class GuildMember {
 	/**
 	 * the user this guild member represents
 	 *
-	 * @var \RestCord\Model\User\User
+	 * @var \RestCord\Model\User\User|null
 	 */
 	public $user;
 

@@ -20,6 +20,10 @@ Requires the &#039;VIEW_AUDIT_LOG&#039; permission.
 Name | Type | Required | Default
 --- | --- | --- | ---
 guild.id | snowflake | true | *null*
+user_id | snowflake | false | *null*
+action_type | integer | false | *null*
+before | snowflake | false | *null*
+limit | integer | false | *null*
 
 ## Response
 

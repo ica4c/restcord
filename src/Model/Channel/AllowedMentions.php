@@ -11,26 +11,40 @@
  * @license     MIT
  */
 
-namespace RestCord\Model\Guild;
+namespace RestCord\Model\Channel;
 
 /**
- * GuildEmbed Model
+ * AllowedMentions Model
  */
-class GuildEmbed {
+class AllowedMentions {
 
 	/**
-	 * the embed channel id
+	 * An array of allowed mention types to parse from the content.
 	 *
-	 * @var int
+	 * @var array
 	 */
-	public $channel_id;
+	public $parse;
 
 	/**
-	 * whether the embed is enabled
+	 * For replies, whether to mention the author of the message being replied to (default false)
 	 *
 	 * @var bool
 	 */
-	public $enabled = false;
+	public $replied_user = false;
+
+	/**
+	 * Array of role_ids to mention (Max size of 100)
+	 *
+	 * @var array list of snowflakes
+	 */
+	public $roles;
+
+	/**
+	 * Array of user_ids to mention (Max size of 100)
+	 *
+	 * @var array list of snowflakes
+	 */
+	public $users;
 
 	/**
 	 * @param array $content

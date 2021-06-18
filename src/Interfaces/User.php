@@ -67,14 +67,6 @@ interface User {
 	public function getUserConnections(array $options);
 
 	/**
-	 * @see https://discordapp.com/developers/docs/resources/user#get-user-dms
-	 *
-	 * @param array $options []
-	 * @return \RestCord\Model\Channel\Channel[] Returns a list of DM channel objects.
-	 */
-	public function getUserDms(array $options);
-
-	/**
 	 * @see https://discordapp.com/developers/docs/resources/user#leave-guild
 	 *
 	 * @param array $options ['guild.id' => 'snowflake']
@@ -85,7 +77,7 @@ interface User {
 	/**
 	 * @see https://discordapp.com/developers/docs/resources/user#modify-current-user
 	 *
-	 * @param array $options ['username' => 'string', 'avatar' => 'avatar data']
+	 * @param array $options ['username' => 'string', 'avatar' => 'image data']
 	 * @return \RestCord\Model\User\User Returns a user object on success.
 	 */
 	public function modifyCurrentUser(array $options);

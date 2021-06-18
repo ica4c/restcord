@@ -29,7 +29,7 @@ interface Invite {
 	/**
 	 * @see https://discordapp.com/developers/docs/resources/invite#get-invite
 	 *
-	 * @param array $options ['invite.code' => 'string']
+	 * @param array $options ['invite.code' => 'string', 'with_counts?' => 'boolean', 'with_expiration?' => 'boolean']
 	 * @return \RestCord\Model\Invite\Invite Returns an invite object for the given code.
 	 */
 	public function getInvite(array $options);

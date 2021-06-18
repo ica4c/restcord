@@ -1,7 +1,7 @@
 ---
 title: Get Guild Prune Count
 category: Guild
-order: 25
+order: 27
 ---
 
 # `getGuildPruneCount`
@@ -20,7 +20,8 @@ Requires the KICK_MEMBERS permission.
 Name | Type | Required | Default
 --- | --- | --- | ---
 guild.id | snowflake | true | *null*
-days | integer | false | *null*
+days | integer | false | 7
+include_roles | array | false | none
 
 ## Response
 

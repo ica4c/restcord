@@ -46,6 +46,20 @@ class Guild {
 	public $application_id;
 
 	/**
+	 * approximate number of members in this guild, returned from the GET /guilds/<id> endpoint when with_counts is true
+	 *
+	 * @var int|null
+	 */
+	public $approximate_member_count;
+
+	/**
+	 * approximate number of non-offline members in this guild, returned from the GET /guilds/<id> endpoint when with_counts is true
+	 *
+	 * @var int|null
+	 */
+	public $approximate_presence_count;
+
+	/**
 	 * banner hash
 	 *
 	 * @var string
@@ -67,25 +81,18 @@ class Guild {
 	public $default_message_notifications;
 
 	/**
-	 * the description for the guild
+	 * the description of a Community guild
 	 *
 	 * @var string
 	 */
 	public $description;
 
 	/**
-	 * if not null, the channel id that the widget will generate an invite to
+	 * discovery splash hash; only present for guilds with the "DISCOVERABLE" feature
 	 *
-	 * @var int|null
+	 * @var string
 	 */
-	public $embed_channel_id;
-
-	/**
-	 * is this guild embeddable (e.g. widget)
-	 *
-	 * @var bool|null
-	 */
-	public $embed_enabled = false;
+	public $discovery_splash;
 
 	/**
 	 * custom guild emojis
@@ -116,6 +123,13 @@ class Guild {
 	public $icon;
 
 	/**
+	 * icon hash, returned when in the template object
+	 *
+	 * @var string|null
+	 */
+	public $icon_hash;
+
+	/**
 	 * guild id
 	 *
 	 * @var int
@@ -130,25 +144,32 @@ class Guild {
 	public $joined_at;
 
 	/**
-	 * whether this is considered a large guild
+	 * true if this is considered a large guild
 	 *
 	 * @var bool|null
 	 */
 	public $large = false;
 
 	/**
-	 * the maximum amount of members for the guild
+	 * the maximum number of members for the guild
 	 *
-	 * @var int
+	 * @var int|null
 	 */
 	public $max_members;
 
 	/**
-	 * the maximum amount of presences for the guild (the default value, currently 5000, is in effect when null is returned)
+	 * the maximum number of presences for the guild (the default value, currently 25000, is in effect when null is returned)
 	 *
-	 * @var int
+	 * @var int|null
 	 */
 	public $max_presences;
+
+	/**
+	 * the maximum amount of users in a video channel
+	 *
+	 * @var int|null
+	 */
+	public $max_video_channel_users;
 
 	/**
 	 * total number of members in this guild
@@ -172,14 +193,21 @@ class Guild {
 	public $mfa_level;
 
 	/**
-	 * guild name (2-100 characters)
+	 * guild name (2-100 characters, excluding trailing and leading whitespace)
 	 *
 	 * @var string
 	 */
 	public $name;
 
 	/**
-	 * whether or not the user is the owner of the guild
+	 * guild NSFW level
+	 *
+	 * @var int
+	 */
+	public $nsfw_level;
+
+	/**
+	 * true if the user is the owner of the guild
 	 *
 	 * @var bool|null
 	 */
@@ -193,23 +221,51 @@ class Guild {
 	public $owner_id;
 
 	/**
-	 * total permissions for the user in the guild (does not include channel overrides)
+	 * total permissions for the user in the guild (excludes overwrites)
 	 *
-	 * @var int|null
+	 * @var string|null
 	 */
 	public $permissions;
 
 	/**
-	 * presences of the users in the guild
+	 * the preferred locale of a Community guild; used in server discovery and notices from Discord; defaults to "en-US"
+	 *
+	 * @var string
+	 */
+	public $preferred_locale;
+
+	/**
+	 * the number of boosts this guild currently has
+	 *
+	 * @var int|null
+	 */
+	public $premium_subscription_count;
+
+	/**
+	 * premium tier (Server Boost level)
+	 *
+	 * @var int
+	 */
+	public $premium_tier;
+
+	/**
+	 * presences of the members in the guild, will only include non-offline members if the size is greater than large threshold
 	 *
 	 * @var array|null
 	 */
 	public $presences;
 
 	/**
-	 * voice region id for the guild
+	 * the id of the channel where admins and moderators of Community guilds receive notices from Discord
 	 *
-	 * @var string
+	 * @var int
+	 */
+	public $public_updates_channel_id;
+
+	/**
+	 * voice region id for the guild (deprecated)
+	 *
+	 * @var string|null
 	 */
 	public $region;
 
@@ -221,6 +277,13 @@ class Guild {
 	public $roles;
 
 	/**
+	 * the id of the channel where Community guilds can display rules and/or guidelines
+	 *
+	 * @var int
+	 */
+	public $rules_channel_id;
+
+	/**
 	 * splash hash
 	 *
 	 * @var string
@@ -228,28 +291,35 @@ class Guild {
 	public $splash;
 
 	/**
-	 * approximent number of members
+	 * Stage instances in the guild
 	 *
-	 * @var int|null
+	 * @var array|null
 	 */
-	public $approximate_member_count;
+	public $stage_instances;
 
 	/**
-	 * approximent number of people currently present
+	 * system channel flags
 	 *
-	 * @var int|null
+	 * @var int
 	 */
-	public $approximate_presence_count;
+	public $system_channel_flags;
 
 	/**
-	 * the id of the channel to which system messages are sent
+	 * the id of the channel where guild notices such as welcome messages and boost events are posted
 	 *
 	 * @var int
 	 */
 	public $system_channel_id;
 
 	/**
-	 * is this guild unavailable
+	 * all active threads in the guild that current user has permission to view
+	 *
+	 * @var array|null
+	 */
+	public $threads;
+
+	/**
+	 * true if this guild is unavailable due to an outage
 	 *
 	 * @var bool|null
 	 */
@@ -270,21 +340,28 @@ class Guild {
 	public $verification_level;
 
 	/**
-	 * (without the guild_id key)
+	 * states of members currently in voice channels; lacks the guild_id key
 	 *
 	 * @var array|null
 	 */
 	public $voice_states;
 
 	/**
-	 * the channel id for the server widget
+	 * the welcome screen of a Community guild, shown to new members, returned in an Invite's guild object
+	 *
+	 * @var array|null
+	 */
+	public $welcome_screen;
+
+	/**
+	 * the channel id that the widget will generate an invite to, or null if set to no invite
 	 *
 	 * @var int|null
 	 */
 	public $widget_channel_id;
 
 	/**
-	 * whether or not the server widget is enabled
+	 * true if the server widget is enabled
 	 *
 	 * @var bool|null
 	 */

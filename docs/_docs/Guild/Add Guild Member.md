@@ -1,7 +1,7 @@
 ---
 title: Add Guild Member
 category: Guild
-order: 10
+order: 12
 ---
 
 # `addGuildMember`
@@ -12,7 +12,7 @@ $client->guild->addGuildMember($parameters);
 
 ## Description
 
-Adds a user to the guild, provided you have a valid oauth2 access token for the user with the guilds.join scope.  Fires a Guild Member Add Gateway event. Requires the bot to have the CREATE_INSTANT_INVITE permission.
+Adds a user to the guild, provided you have a valid oauth2 access token for the user with the guilds.join scope.  Fires a Guild Member Add Gateway event.
 
 ## Parameters
 

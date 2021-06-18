@@ -21,7 +21,7 @@ interface Webhook {
 	/**
 	 * @see https://discordapp.com/developers/docs/resources/webhook#create-webhook
 	 *
-	 * @param array $options ['channel.id' => 'snowflake', 'name' => 'string', 'avatar' => 'avatar data string']
+	 * @param array $options ['channel.id' => 'snowflake', 'name' => 'string', 'avatar?' => 'image data']
 	 * @return \RestCord\Model\Webhook\Webhook Returns a webhook object on success.
 	 */
 	public function createWebhook(array $options);
@@ -35,12 +35,28 @@ interface Webhook {
 	public function deleteWebhook(array $options);
 
 	/**
+	 * @see https://discordapp.com/developers/docs/resources/webhook#delete-webhook-message
+	 *
+	 * @param array $options ['webhook.id' => 'snowflake', 'webhook.token' => 'string', 'message.id' => 'snowflake']
+	 * @return array Returns a 204 NO CONTENT response on success.
+	 */
+	public function deleteWebhookMessage(array $options);
+
+	/**
 	 * @see https://discordapp.com/developers/docs/resources/webhook#delete-webhook-with-token
 	 *
 	 * @param array $options ['webhook.id' => 'snowflake', 'webhook.token' => 'string']
 	 * @return array
 	 */
 	public function deleteWebhookWithToken(array $options);
+
+	/**
+	 * @see https://discordapp.com/developers/docs/resources/webhook#edit-webhook-message
+	 *
+	 * @param array $options ['webhook.id' => 'snowflake', 'webhook.token' => 'string', 'message.id' => 'snowflake', 'content' => 'string', 'embeds' => 'array', 'file' => 'file contents', 'payload_json' => 'string', 'allowed_mentions' => 'object', 'attachments' => 'array', 'components' => 'array']
+	 * @return \RestCord\Model\Channel\Message Returns a message object on success.
+	 */
+	public function editWebhookMessage(array $options);
 
 	/**
 	 * @see https://discordapp.com/developers/docs/resources/webhook#execute-github-compatible-webhook
@@ -61,7 +77,7 @@ interface Webhook {
 	/**
 	 * @see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
 	 *
-	 * @param array $options ['webhook.id' => 'snowflake', 'webhook.token' => 'string', 'wait' => 'boolean', 'content' => 'string', 'username' => 'string', 'avatar_url' => 'string', 'tts' => 'boolean', 'file' => 'file contents', 'embeds' => 'array', 'payload_json' => 'string']
+	 * @param array $options ['webhook.id' => 'snowflake', 'webhook.token' => 'string', 'wait' => 'boolean', 'thread_id' => 'snowflake', 'content' => 'string', 'username' => 'string', 'avatar_url' => 'string', 'tts' => 'boolean', 'file' => 'file contents', 'embeds' => 'array', 'payload_json' => 'string', 'allowed_mentions' => 'object', 'components' => 'array']
 	 * @return array
 	 */
 	public function executeWebhook(array $options);
@@ -91,6 +107,14 @@ interface Webhook {
 	public function getWebhook(array $options);
 
 	/**
+	 * @see https://discordapp.com/developers/docs/resources/webhook#get-webhook-message
+	 *
+	 * @param array $options ['webhook.id' => 'snowflake', 'webhook.token' => 'string', 'message.id' => 'snowflake']
+	 * @return \RestCord\Model\Channel\Message Returns a previously-sent webhook message from the same token.
+	 */
+	public function getWebhookMessage(array $options);
+
+	/**
 	 * @see https://discordapp.com/developers/docs/resources/webhook#get-webhook-with-token
 	 *
 	 * @param array $options ['webhook.id' => 'snowflake', 'webhook.token' => 'string']
@@ -101,7 +125,7 @@ interface Webhook {
 	/**
 	 * @see https://discordapp.com/developers/docs/resources/webhook#modify-webhook
 	 *
-	 * @param array $options ['webhook.id' => 'snowflake', 'name' => 'string', 'avatar' => 'string', 'channel_id' => 'snowflake']
+	 * @param array $options ['webhook.id' => 'snowflake', 'name' => 'string', 'avatar' => 'image data', 'channel_id' => 'snowflake']
 	 * @return \RestCord\Model\Webhook\Webhook Returns the updated webhook object on success.
 	 */
 	public function modifyWebhook(array $options);

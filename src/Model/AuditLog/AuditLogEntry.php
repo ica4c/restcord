@@ -19,9 +19,9 @@ namespace RestCord\Model\AuditLog;
 class AuditLogEntry {
 
 	/**
-	 * type of action that occured
+	 * type of action that occurred
 	 *
-	 * @var audit log event
+	 * @var int audit log event
 	 */
 	public $action_type;
 
@@ -42,7 +42,7 @@ class AuditLogEntry {
 	/**
 	 * additional info for certain action types
 	 *
-	 * @var optional audit entry info|null
+	 * @var mixed optional audit entry info|null
 	 */
 	public $options;
 

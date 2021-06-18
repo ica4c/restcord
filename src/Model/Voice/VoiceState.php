@@ -54,6 +54,13 @@ class VoiceState {
 	public $mute = false;
 
 	/**
+	 * the time at which the user requested to speak
+	 *
+	 * @var \DateTimeImmutable
+	 */
+	public $request_to_speak_timestamp;
+
+	/**
 	 * whether this user is locally deafened
 	 *
 	 * @var bool
@@ -66,6 +73,20 @@ class VoiceState {
 	 * @var bool
 	 */
 	public $self_mute = false;
+
+	/**
+	 * whether this user is streaming using "Go Live"
+	 *
+	 * @var bool|null
+	 */
+	public $self_stream = false;
+
+	/**
+	 * whether this user's camera is enabled
+	 *
+	 * @var bool
+	 */
+	public $self_video = false;
 
 	/**
 	 * the session id for this voice state

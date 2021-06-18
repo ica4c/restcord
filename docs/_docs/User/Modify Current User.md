@@ -20,7 +20,7 @@ Modify the requester&#039;s user account settings.
 Name | Type | Required | Default
 --- | --- | --- | ---
 username | string | false | *null*
-avatar | avatar data | false | *null*
+avatar | image data | false | *null*
 
 ## Response
 

@@ -12,7 +12,7 @@ $client->webhook->deleteWebhook($parameters);
 
 ## Description
 
-Delete a webhook permanently. User must be owner.
+Delete a webhook permanently. Requires the MANAGE_WEBHOOKS permission.
 
 ## Parameters
 

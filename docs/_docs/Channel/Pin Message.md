@@ -1,13 +1,13 @@
 ---
-title: Add Pinned Channel Message
+title: Pin Message
 category: Channel
-order: 21
+order: 24
 ---
 
-# `addPinnedChannelMessage`
+# `pinMessage`
 
 ```php
-$client->channel->addPinnedChannelMessage($parameters);
+$client->channel->pinMessage($parameters);
 ```
 
 ## Description

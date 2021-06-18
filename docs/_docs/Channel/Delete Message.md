@@ -1,7 +1,7 @@
 ---
 title: Delete Message
 category: Channel
-order: 13
+order: 15
 ---
 
 # `deleteMessage`

@@ -1,18 +1,18 @@
 ---
-title: Delete Pinned Channel Message
+title: Unpin Message
 category: Channel
-order: 22
+order: 25
 ---
 
-# `deletePinnedChannelMessage`
+# `unpinMessage`
 
 ```php
-$client->channel->deletePinnedChannelMessage($parameters);
+$client->channel->unpinMessage($parameters);
 ```
 
 ## Description
 
-Delete a pinned message in a channel. Requires the MANAGE_MESSAGES permission.
+Unpin a message in a channel. Requires the MANAGE_MESSAGES permission.
 
 ## Parameters
 

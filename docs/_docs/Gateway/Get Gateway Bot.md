@@ -12,7 +12,7 @@ $client->gateway->getGatewayBot($parameters);
 
 ## Description
 
-This endpoint requires authentication using a valid bot token.
+Unlike the Get Gateway, this route should not be cached for extended periods of time as the value is not guaranteed to be the same per-call, and changes as the bot joins/leaves guilds.
 
 ## Parameters
 
@@ -22,8 +22,9 @@ Name | Type | Required | Default
 total | integer | false | *null*
 remaining | integer | false | *null*
 reset_after | integer | false | *null*
+max_concurrency | integer | false | *null*
 
 ## Response
 
-Possibly No Response
+Returns an object based on the information in Get Gateway, plus additional metadata that can help during the operation of large or sharded bots.
 

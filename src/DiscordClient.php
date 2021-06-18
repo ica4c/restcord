@@ -137,7 +137,7 @@ class DiscordClient
      */
     private function validateOptions(array $options)
     {
-        $currentVersion = 6;
+        $currentVersion = 9;
         $resolver       = new OptionsResolver();
         $resolver->setDefaults(
             [

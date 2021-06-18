@@ -1,7 +1,7 @@
 ---
 title: Get Guild Ban
 category: Guild
-order: 17
+order: 19
 ---
 
 # `getGuildBan`

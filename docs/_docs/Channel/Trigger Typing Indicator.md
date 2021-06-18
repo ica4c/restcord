@@ -1,7 +1,7 @@
 ---
 title: Trigger Typing Indicator
 category: Channel
-order: 19
+order: 22
 ---
 
 # `triggerTypingIndicator`

@@ -21,7 +21,7 @@ Name | Type | Required | Default
 --- | --- | --- | ---
 before | snowflake | false | *null*
 after | snowflake | false | *null*
-limit | integer | false | 100
+limit | integer | false | 200
 
 ## Response
 

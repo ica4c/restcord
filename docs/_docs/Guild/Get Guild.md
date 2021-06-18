@@ -12,7 +12,7 @@ $client->guild->getGuild($parameters);
 
 ## Description
 
-
+If with_counts is set to true, this endpoint will also return approximate_member_count and approximate_presence_count for the guild.
 
 ## Parameters
 
@@ -20,6 +20,7 @@ $client->guild->getGuild($parameters);
 Name | Type | Required | Default
 --- | --- | --- | ---
 guild.id | snowflake | true | *null*
+with_counts? | boolean | false | *null*
 
 ## Response
 

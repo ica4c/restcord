@@ -12,7 +12,7 @@ $client->guild->deleteGuildIntegration($parameters);
 
 ## Description
 
-Delete the attached integration object for the guild. Requires the MANAGE_GUILD permission.  Fires a Guild Integrations Update Gateway event.
+Delete the attached integration object for the guild. Deletes any associated webhooks and kicks the associated bot if there is one. Requires the MANAGE_GUILD permission.  Fires a Guild Integrations Update Gateway event.
 
 ## Parameters
 

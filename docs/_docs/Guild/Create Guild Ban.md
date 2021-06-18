@@ -1,7 +1,7 @@
 ---
 title: Create Guild Ban
 category: Guild
-order: 18
+order: 20
 ---
 
 # `createGuildBan`
@@ -21,7 +21,7 @@ Name | Type | Required | Default
 --- | --- | --- | ---
 guild.id | snowflake | true | *null*
 user.id | snowflake | true | *null*
-delete-message-days? | integer | false | *null*
+delete_message_days? | integer | false | *null*
 reason? | string | false | *null*
 
 ## Response

@@ -86,6 +86,20 @@ class User {
 	public $premium_type;
 
 	/**
+	 * the public flags on a user's account
+	 *
+	 * @var int|null
+	 */
+	public $public_flags;
+
+	/**
+	 * whether the user is an Official Discord System user (part of the urgent message system)
+	 *
+	 * @var bool|null
+	 */
+	public $system = false;
+
+	/**
 	 * the user's username, not unique across the platform
 	 *
 	 * @var string

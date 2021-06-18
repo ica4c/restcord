@@ -1,7 +1,7 @@
 ---
 title: List Guild Members
 category: Guild
-order: 9
+order: 10
 ---
 
 # `listGuildMembers`

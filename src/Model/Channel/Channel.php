@@ -33,7 +33,14 @@ class Channel {
 	public $bitrate;
 
 	/**
-	 * the id of the guild
+	 * default duration for newly created threads, in minutes, to automatically archive the thread after recent activity, can be set to: 60, 1440, 4320, 10080
+	 *
+	 * @var int|null
+	 */
+	public $default_auto_archive_duration;
+
+	/**
+	 * the id of the guild (may be missing for some channel objects received over gateway guild dispatches)
 	 *
 	 * @var int|null
 	 */
@@ -61,14 +68,35 @@ class Channel {
 	public $last_message_id;
 
 	/**
-	 * when the last pinned message was pinned
+	 * when the last pinned message was pinned. This may be null in events such as GUILD_CREATE when a message is not pinned.
 	 *
 	 * @var \DateTimeImmutable|null
 	 */
 	public $last_pin_timestamp;
 
 	/**
-	 * the name of the channel (2-100 characters)
+	 * thread member object for the current user, if they have joined the thread, only included on certain API endpoints
+	 *
+	 * @var array|null
+	 */
+	public $member;
+
+	/**
+	 * an approximate count of users in a thread, stops counting at 50
+	 *
+	 * @var int|null
+	 */
+	public $member_count;
+
+	/**
+	 * an approximate count of messages in a thread, stops counting at 50
+	 *
+	 * @var int|null
+	 */
+	public $message_count;
+
+	/**
+	 * the name of the channel (1-100 characters)
 	 *
 	 * @var string|null
 	 */
@@ -82,14 +110,14 @@ class Channel {
 	public $nsfw = false;
 
 	/**
-	 * id of the DM creator
+	 * id of the creator of the group DM or thread
 	 *
 	 * @var int|null
 	 */
 	public $owner_id;
 
 	/**
-	 * id of the parent category for a channel
+	 * for guild channels: id of the parent category for a channel (each parent category can contain up to 50 channels), for threads: id of the text channel this thread was created
 	 *
 	 * @var int|null
 	 */
@@ -124,6 +152,20 @@ class Channel {
 	public $recipients;
 
 	/**
+	 * voice region id for the voice channel, automatic when set to null
+	 *
+	 * @var string|null
+	 */
+	public $rtc_region;
+
+	/**
+	 * thread-specific fields not needed by other channels
+	 *
+	 * @var array|null
+	 */
+	public $thread_metadata;
+
+	/**
 	 * the channel topic (0-1024 characters)
 	 *
 	 * @var string|null
@@ -143,6 +185,13 @@ class Channel {
 	 * @var int|null
 	 */
 	public $user_limit;
+
+	/**
+	 * the camera video quality mode of the voice channel, 1 when not present
+	 *
+	 * @var int|null
+	 */
+	public $video_quality_mode;
 
 	/**
 	 * @param array $content

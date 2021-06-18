@@ -13,7 +13,6 @@ $client->guild->getGuildWidgetImage($parameters);
 ## Description
 
 Requires no permissions or authentication.
-The same documentation also applies to embed.png.
 
 ## Parameters
 

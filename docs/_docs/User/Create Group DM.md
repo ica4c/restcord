@@ -1,7 +1,7 @@
 ---
 title: Create Group Dm
 category: User
-order: 8
+order: 7
 ---
 
 # `createGroupDm`

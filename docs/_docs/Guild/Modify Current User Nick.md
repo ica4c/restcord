@@ -1,7 +1,7 @@
 ---
 title: Modify Current User Nick
 category: Guild
-order: 12
+order: 14
 ---
 
 # `modifyCurrentUserNick`
@@ -20,7 +20,7 @@ Modifies the nickname of the current user in a guild.  Fires a Guild Member Upda
 Name | Type | Required | Default
 --- | --- | --- | ---
 guild.id | snowflake | true | *null*
-nick | string | false | *null*
+?nick | string | false | *null*
 
 ## Response
 

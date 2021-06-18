@@ -12,7 +12,7 @@ $client->channel->getChannel($parameters);
 
 ## Description
 
-Get a channel by ID.
+Get a channel by ID.   If the channel is a thread, a thread member object is included in the returned result.
 
 ## Parameters
 
@@ -28,3 +28,4 @@ Returns a channel object.
 Can Return:
 
 * channel
+* thread member

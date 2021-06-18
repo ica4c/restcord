@@ -26,6 +26,13 @@ class Emoji {
 	public $animated = false;
 
 	/**
+	 * whether this emoji can be used, may be false due to loss of Server Boosts
+	 *
+	 * @var bool|null
+	 */
+	public $available = false;
+
+	/**
 	 * emoji id
 	 *
 	 * @var int
@@ -35,7 +42,7 @@ class Emoji {
 	/**
 	 * the 128x128 emoji image
 	 *
-	 * @var string
+	 * @var string image data
 	 */
 	public $image;
 
@@ -61,7 +68,7 @@ class Emoji {
 	public $require_colons = false;
 
 	/**
-	 * roles to which this emoji will be whitelisted
+	 * roles allowed to use this emoji
 	 *
 	 * @var array
 	 */
