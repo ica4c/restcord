@@ -19,6 +19,7 @@ use GuzzleHttp\Command\Guzzle\Description;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
 use GuzzleHttp\Command\Result;
 use GuzzleHttp\HandlerStack;
+use GuzzleRetry\GuzzleRetryMiddleware;
 use function GuzzleHttp\json_decode;
 use GuzzleHttp\Middleware;
 use Monolog\Logger;
@@ -231,7 +232,7 @@ class DiscordClient
             $data = json_decode($response->getBody()->__toString());
         }
 
-        list($responseType, $array) = $this->getResponseType($command->getName(), $operation);
+        [$responseType, $array] = $this->getResponseType($command->getName(), $operation);
 
         $firstType = explode('/', $this->dashesToCamelCase($responseType, true));
         $class     = $this->mapBadDocs(
