@@ -1759,7 +1759,7 @@
                     },
                     "message_reference": {
                         "location": "json",
-                        "type": "message reference",
+                        "type": "object",
                         "description": "include to make your message a reply",
                         "extra": {
                             "Required": "false"
