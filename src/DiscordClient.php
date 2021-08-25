@@ -72,13 +72,8 @@ class DiscordClient
         $this->logger  = $this->options['logger'];
 
         $stack = HandlerStack::create();
-        $stack->push(
-            new RateLimiter(
-                $this->options['rateLimitProvider'],
-                $this->options,
-                $this->logger
-            )
-        );
+
+        $stack->push(GuzzleRetryMiddleware::factory());
 
         $stack->push(
             Middleware::log(
